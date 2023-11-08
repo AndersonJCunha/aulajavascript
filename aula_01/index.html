@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick=" emiteAlerta()">clique aqui</button>
+
+    <h1 id="titulo" class="destaque" 
+    onmouseleave="emiteErro()" 
+    onmouseover="emiteErro2()" 
+    onclick="alteraH1()">Emite Erro</h1>
+
+    <h2 id="titulo2" class="destaque" 
+    onclick="alteraH2()">Emite Erro</h2>
+
+    <h3 class ="titulo3" class="destaque" 
+ 
+    onclick="alteraH3()">Emite Erro</h3>
+
+    <P>
+
+        <input type="number" onkeyup="calculatabuada(this.value)">
+    </P>
+
+    <div id="tabuada">
+
+    </div>
+
+    <script type="text/javascript">
+        const nome = "Anderson"
+        const sobrenome = "Cunha"
+        console.log(nome + " " + sobrenome)
+
+        function emiteAlerta() {
+            alert('voce clicou em um botao');
+            // console.log("A função emiteAlerta foi acionada");
+            // console.error("mensage de erro");
+            // console.warn("Um erro que não e grave");
+            // console.info("mensage de informação");
+            // console.table([55, 2222, 555]);
+        }
+
+        const emiteErro = function () {
+            console.error("Isso e uma funçao em uma variavel");
+        }
+
+        const emiteErro2 = function () {
+            console.warn("Emite erro 2");
+        }
+
+           // PEGANDO ELEMENTO VIA js
+           const alteraH1 = function () {
+           const h1 = document.querySelector('h1');// ELEMENTO
+           ('#titulo')
+           h1.innerText = "Valor alterado";}
+
+           
+
+          const alteraH2 = function () {
+          const h2 = document.querySelector ('#titulo2');  //ID
+          h2.innerText = "Valor alterado 10";}
+
+          const alteraH3 = function () {
+          const h3 = document.querySelector ('.titulo3');  //class
+          h3.innerText = "Valor";}
+
+          const calculatabuada = function(valor){
+            const tabuada= document.querySelector("#tabuada");
+            tabuada.innerText= "";
+
+            for(i =0; i<=10; i++){
+            tabuada.innerHTML += `<p>${i} x ${valor}= ${i*valor} </p>`;
+            }
+          }
+        
+
+    </script>
+
+</body>
+
+</html>
