@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label>x</label>
+        <input type="number" name="numero_x">
+        <br>
+        <label>y</label>
+        <input type="number" name="numero_y">
+        <br>
+        <button type="button" onclick="bt_soma(this)">soma</button>
+        <button type="button" onclick="bt_subtrai(this)">subtrai</button>
+        <button type="button" onclick="bt_multiplicacao(this)">multiplicacao</button>
+        <button type="button" onclick="bt_divisao(this)">divisao</button>
+        <button type="button" onclick="bt_resto(this)">resto</button>
+        <button type="button" onclick="bt_potencia(this)">potencia</button>
+        <button type="button" onclick="bt_limpar()">limpar</button>
+
+
+
+    </form>
+    <p id="resultado"></p>
+
+
+    <script src="./js/math.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        const bt_soma = function (element) {
+            const numero_x = document.querySelector('input[name="numero_x"]').value;
+            const numero_y = document.querySelector('input[name="numero_y"]').value;
+            document.querySelector('#resultado').innerText = soma(numero_x, numero_y);
+            element.style.color = "#49af59";
+            element.style.backgroundColor = "red";
+            element.style.border = "1px dashed #484848";
+            element.style.borderRadius = "10px 0 10px 0";
+        }
+        const bt_subtrai = function (element) {
+            const numero_x = document.querySelector('input[name="numero_x"]').value;
+            const numero_y = document.querySelector('input[name="numero_y"]').value;
+            document.querySelector('#resultado').innerText = subtrair(numero_x, numero_y);
+            element.style.color = "#49af59";
+            element.style.backgroundColor = "black";
+
+        }
+        const bt_multiplicacao = function (element) {
+            const numero_x = document.querySelector('input[name="numero_x"]').value;
+            const numero_y = document.querySelector('input[name="numero_y"]').value;
+            document.querySelector('#resultado').innerText = multiplicacao(numero_x, numero_y);
+            element.style.color = "#49af59";
+            element.style.backgroundColor = "black";
+        }
+
+        const bt_divisao = function (element) {
+            const numero_x = document.querySelector('input[name="numero_x"]').value;
+            const numero_y = document.querySelector('input[name="numero_y"]').value;
+            document.querySelector('#resultado').innerText = divisao(numero_x, numero_y);
+            element.style.color = "#49af59";
+            element.style.backgroundColor = "black";
+        }
+
+        const bt_resto = function (element) {
+            const numero_x = document.querySelector('input[name="numero_x"]').value;
+            const numero_y = document.querySelector('input[name="numero_y"]').value;
+            document.querySelector('#resultado').innerText = resto(numero_x, numero_y);
+            element.style.color = "#49af59";
+            element.style.backgroundColor = "black";
+        }
+
+        const bt_potencia = function (element) {
+            const numero_x = document.querySelector('input[name="numero_x"]').value;
+            const numero_y = document.querySelector('input[name="numero_y"]').value;
+            document.querySelector('#resultado').innerText = potencia(numero_x, numero_y);
+            element.style.color = "#49af59";
+            element.title = "potencia"
+            element.style.backgroundColor = "black";
+        }
+
+
+        const bt_limpar = function () {
+            document.querySelector('input[name="numero_x"]').value = "";
+            document.querySelector('input[name="numero_y"]').value = "";
+            document.querySelector('#resultado').innerText = "";
+            const botoes = document.querySelectorAll('button');
+            for (botao of botoes) {
+                botao.style.color = "buttontext";
+                botao.style.backgroundColor = "buttonface";
+                botao.style.border = "inherit";
+                botao.style.borderRadius = "2px";
+                botao.title = "";
+
+
+            }
+        }   
+    </script>
+
+
+
+</body>
+
+</html>
