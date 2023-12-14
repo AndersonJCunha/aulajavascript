@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="iniciar_game" onclick="iniciarJogo(this)">Iniciar Jogo</h1>
+    <div id="game" style="display: none">
+      <input type="text" id="letra" maxlength="1" />
+      <button type="button" onclick="tentar()">Enviar letra</button>
+      <p id="descricao_palavra"></p>
+      <p id="elemento_temp"></p>
+      <p>Acertos: <span id="acertos"></span></p>
+      <p>Erros: <span id="erros"></span></p>
+    </div>
+
+    <script type="text/javascript" src="./assets/js/jogo_da_forca.js"></script>
+  </body>
+</html>
